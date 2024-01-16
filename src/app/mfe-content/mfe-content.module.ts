@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MfeLoaderComponent } from './mfe-loader/mfe-loader.component';
-
+import { LoggerModule, NgxLoggerLevel, NGXLogger } from 'ngx-logger';
 
 
 @NgModule({
@@ -9,7 +9,10 @@ import { MfeLoaderComponent } from './mfe-loader/mfe-loader.component';
     MfeLoaderComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    LoggerModule.forRoot({
+      level: NgxLoggerLevel.DEBUG,
+    })
+  ],
 })
 export class MfeContentModule { }
